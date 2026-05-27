@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6"
         >
-          Tattoo Artist · Los Angeles
+          Tatuador · Cancún
         </motion.p>
 
         <motion.h1
@@ -42,9 +42,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="font-serif text-5xl md:text-7xl lg:text-8xl text-foreground leading-none tracking-tight mb-8"
         >
-          <span className="italic">Crafting</span> stories
+          <span className="italic">Creando</span> historias
           <br />
-          on skin
+          en la piel
         </motion.h1>
 
         <motion.p
@@ -53,8 +53,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-12 leading-relaxed"
         >
-          Bespoke tattoo artistry. Custom designs crafted with precision, 
-          passion, and a deep respect for the art form.
+          Arte del tatuaje a medida. Diseños personalizados elaborados con precisión, pasión y un profundo respeto por esta forma de arte.
         </motion.p>
 
         <motion.div
@@ -67,7 +66,7 @@ export function Hero() {
             href="#booking"
             className="group relative px-8 py-4 bg-foreground text-background font-medium tracking-wide overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]"
           >
-            <span className="relative z-10">Book a Consultation</span>
+            <span className="relative z-10">Reservar una Consulta</span>
             <motion.div
               className="absolute inset-0 bg-accent"
               initial={{ x: "-100%" }}
@@ -79,7 +78,7 @@ export function Hero() {
             href="#portfolio"
             className="px-8 py-4 text-foreground border border-foreground/20 hover:border-foreground/50 transition-all duration-300 tracking-wide"
           >
-            View Portfolio
+            Ver Portafolio
           </Link>
         </motion.div>
 
