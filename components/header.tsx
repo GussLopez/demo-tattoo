@@ -1,14 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
 const navItems = [
-  { name: "Work", href: "#portfolio" },
-  { name: "About", href: "#about" },
-  { name: "Booking", href: "#booking" },
-  { name: "Reviews", href: "#testimonials" },
+  { name: "Trabajos", href: "#portfolio" },
+  { name: "Sobre mí", href: "#about" },
+  { name: "Reservar", href: "#booking" },
+  { name: "Reseñas", href: "#testimonials" },
 ]
 
 export function Header() {
@@ -27,12 +28,11 @@ export function Header() {
             className="text-foreground text-lg tracking-tight font-medium"
             whileHover={{ opacity: 0.7 }}
           >
-            MARCUS VEGA
+            JUAN PÉREZ
           </motion.span>
           <span className="block h-px w-0 bg-accent group-hover:w-full transition-all duration-300" />
         </Link>
 
-        {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-8">
           {navItems.map((item, index) => (
             <motion.li
@@ -56,14 +56,14 @@ export function Header() {
           >
             <Link
               href="#booking"
-              className="text-sm text-foreground border border-foreground/20 px-4 py-2 hover:bg-foreground hover:text-background transition-all duration-300"
+              className="flex items-center gap-1 text-sm text-foreground border border-foreground/20 px-4 py-2 hover:bg-foreground hover:text-background transition-all duration-300"
             >
-              Contact ↗
+              Contacto
+              <ArrowUpRight className="size-4" />
             </Link>
           </motion.li>
         </ul>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"

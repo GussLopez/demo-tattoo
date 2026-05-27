@@ -10,10 +10,10 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "About", href: "#about" },
-  { name: "Book Now", href: "#booking" },
-  { name: "Reviews", href: "#testimonials" },
+  { name: "Portafolio", href: "#portfolio" },
+  { name: "Sobre mí", href: "#about" },
+  { name: "Reserva ahora", href: "#booking" },
+  { name: "Reseñas", href: "#testimonials" },
 ]
 
 export function Footer() {
@@ -21,7 +21,6 @@ export function Footer() {
     <footer className="py-16 md:py-24 px-6 md:px-12 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
-          {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,11 +28,10 @@ export function Footer() {
             transition={{ duration: 0.6 }}
           >
             <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-2xl text-foreground">MARCUS VEGA</span>
+              <span className="font-serif text-2xl text-foreground">Juan Pérez</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Bespoke tattoo artistry in Los Angeles. 
-              Custom designs crafted with precision and passion.
+              Tatuajes personalizados en Cancún. Diseños a medida elaborados con precisión y pasión.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -49,14 +47,13 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-foreground font-medium mb-6 text-sm tracking-wider uppercase">Quick Links</h4>
+            <h4 className="text-foreground font-medium mb-6 text-sm tracking-wider uppercase">Enlaces Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -71,36 +68,34 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-foreground font-medium mb-6 text-sm tracking-wider uppercase">Contact</h4>
+            <h4 className="text-foreground font-medium mb-6 text-sm tracking-wider uppercase">Contacto</h4>
             <ul className="space-y-3 text-muted-foreground">
               <li>
-                <span className="block text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Studio</span>
-                123 Arts District Blvd<br />
-                Los Angeles, CA 90013
+                <span className="block text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Estudio</span>
+                123 Blvd Colosio<br />
+                Cancún, Quintana Roo 77530
               </li>
               <li>
                 <span className="block text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Email</span>
-                <a href="mailto:hello@marcusvega.ink" className="hover:text-foreground transition-colors">
-                  hello@marcusvega.ink
+                <a href="mailto:hello@juanperez.com" className="hover:text-foreground transition-colors">
+                  hello@juanperez.com
                 </a>
               </li>
               <li>
-                <span className="block text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Hours</span>
-                Tue — Sat: 11AM — 8PM<br />
-                By appointment only
+                <span className="block text-xs text-muted-foreground/60 uppercase tracking-wider mb-1">Horarios</span>
+                LUn — Sab: 11AM — 8PM<br />
+                Con reservación uicamente
               </li>
             </ul>
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -109,10 +104,10 @@ export function Footer() {
           className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Marcus Vega. All rights reserved.
+            © {new Date().getFullYear()} Juan Pérez. Todos los derechos reservados.
           </p>
           <p className="text-muted-foreground/60 text-xs">
-            Designed with precision. Crafted with passion.
+            Diseñado con precisión. Hecho con pasión.
           </p>
         </motion.div>
       </div>

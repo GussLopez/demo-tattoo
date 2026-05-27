@@ -24,7 +24,7 @@ export function About() {
             <div className="relative aspect-4/5 overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=800&h=1000&fit=crop"
-                alt="Marcus Vega - Tattoo Artist"
+                alt="Juan Pérez - Tatuador"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
@@ -57,7 +57,7 @@ export function About() {
               className="space-y-6 text-muted-foreground leading-relaxed"
             >
               <p>
-                Soy Juan Perez, un tatuador radicado en Cancún con más de una década de
+                Soy Juan Pérez, un tatuador radicado en Cancún con más de una década de
                 experiencia transformando ideas en arte permanente. Mi trayectoria comenzó en la
                 escena underground del este de Cancún, donde aprendí los fundamentos de algunos de los
                 artistas más respetados de la industria.
