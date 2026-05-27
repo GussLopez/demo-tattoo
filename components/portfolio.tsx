@@ -22,21 +22,21 @@ const portfolioItems = [
   {
     id: 3,
     title: "Traditional Eagle",
-    category: "Traditional",
+    category: "Tradicional",
     image: "https://images.unsplash.com/photo-1542556398-95fb5b9f9b48?w=600&h=700&fit=crop",
     height: "tall",
   },
   {
     id: 4,
     title: "Minimalist Script",
-    category: "Lettering",
+    category: "Tradicional",
     image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=600&h=500&fit=crop",
     height: "normal",
   },
   {
     id: 5,
     title: "Japanese Koi",
-    category: "Japanese",
+    category: "Japonés",
     image: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&h=900&fit=crop",
     height: "tall",
   },
@@ -50,7 +50,7 @@ const portfolioItems = [
   {
     id: 7,
     title: "Portrait Work",
-    category: "Realism",
+    category: "Realismo",
     image: "https://images.unsplash.com/photo-1612459284970-e8f027596582?w=600&h=750&fit=crop",
     height: "tall",
   },
@@ -63,20 +63,19 @@ const portfolioItems = [
   },
 ]
 
-const categories = ["All", "Blackwork", "Fine Line", "Traditional", "Japanese", "Realism", "Dotwork"]
+const categories = ["Todos", "Blackwork", "Fine Line", "Tradicional", "Japonés", "Realismo", "Dotwork"]
 
 export function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("Todos")
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
-  const filteredItems = activeCategory === "All" 
+  const filteredItems = activeCategory === "Todos" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory)
 
   return (
     <section id="portfolio" className="py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,11 +83,10 @@ export function Portfolio() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">Selected Work</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground">Portfolio</h2>
+          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">Trabajo Seleccionado</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground">Portafolio</h2>
         </motion.div>
 
-        {/* Category Filter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +109,6 @@ export function Portfolio() {
           ))}
         </motion.div>
 
-        {/* Masonry Grid */}
         <motion.div 
           layout
           className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"
@@ -128,7 +125,7 @@ export function Portfolio() {
               onHoverEnd={() => setHoveredId(null)}
               className="relative break-inside-avoid group cursor-pointer overflow-hidden"
             >
-              <div className={`relative ${item.height === "tall" ? "aspect-[3/4]" : "aspect-square"}`}>
+              <div className={`relative ${item.height === "tall" ? "aspect-3/4" : "aspect-square"}`}>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -136,7 +133,6 @@ export function Portfolio() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                {/* Overlay */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: hoveredId === item.id ? 1 : 0 }}
@@ -167,7 +163,6 @@ export function Portfolio() {
                   </motion.h3>
                 </motion.div>
 
-                {/* Border animation */}
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: hoveredId === item.id ? 1 : 0 }}
