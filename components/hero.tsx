@@ -6,10 +6,7 @@ import Link from "next/link"
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10" />
-      
-      {/* Subtle animated background pattern */}
+      <div className="absolute inset-0 bg-linear-to-b from-background via-background/95 to-background z-10" />
       <div className="absolute inset-0 opacity-[0.03]">
         <motion.div
           animate={{ 
