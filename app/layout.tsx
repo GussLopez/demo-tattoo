@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Marcus Vega | Tattoo Artist',
+  title: 'Juan Pérez | Tatuador',
   description: 'Bespoke tattoo artistry. Custom designs crafted with precision and passion.',
   keywords: ['tattoo', 'tattoo artist', 'custom tattoos', 'blackwork', 'fine line'],
 }
