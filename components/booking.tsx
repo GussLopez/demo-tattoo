@@ -5,39 +5,39 @@ import { useState, useRef, type ChangeEvent, type FormEvent } from "react"
 
 const tattooTypes = [
   "Blackwork",
-  "Fine Line",
-  "Traditional",
-  "Japanese",
-  "Realism",
-  "Geometric",
+  "Línea fina",
+  "Tradicional",
+  "Japonés",
+  "Realismo",
+  "Geométrico",
   "Dotwork",
   "Lettering",
-  "Other",
+  "Otro",
 ]
 
 const sizes = [
-  "Small (2-4 inches)",
-  "Medium (4-6 inches)",
-  "Large (6-10 inches)",
-  "Extra Large (10+ inches)",
-  "Full Sleeve",
-  "Half Sleeve",
+  "Pequeño (5-10 cm)",
+  "Mediano (10-15 cm)",
+  "Grande (15-25 cm)",
+  "Extra grande (25+ cm)",
+  "Manga completa",
+  "Media manga",
 ]
 
 const bodyParts = [
-  "Arm",
-  "Forearm",
-  "Wrist",
-  "Shoulder",
-  "Back",
-  "Chest",
-  "Ribs",
-  "Leg",
-  "Thigh",
-  "Ankle",
-  "Neck",
-  "Hand",
-  "Other",
+  "Brazo",
+  "Antebrazo",
+  "Muñeca",
+  "Hombro",
+  "Espalda",
+  "Pecho",
+  "Costillas",
+  "Pierna",
+  "Muslo",
+  "Tobillo",
+  "Cuello",
+  "Mano",
+  "Otro",
 ]
 
 export function Booking() {
@@ -68,17 +68,16 @@ export function Booking() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
+
     await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
     setIsSubmitting(false)
     setSubmitted(true)
   }
 
   if (submitted) {
     return (
-      <section id="booking" className="py-24 md:py-32 px-6 md:px-12">
+      <section id="booking" className="py-24 md:py-32 md:pt-58 px-6 md:px-12">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -90,9 +89,13 @@ export function Booking() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="font-serif text-3xl text-foreground mb-4">Request Received</h3>
+
+            <h3 className="font-serif text-3xl text-foreground mb-4">
+              Solicitud recibida
+            </h3>
+
             <p className="text-muted-foreground">
-              Thank you for reaching out. I&apos;ll review your request and get back to you within 24-48 hours.
+              Gracias por contactarme. Revisaré tu solicitud y te responderé en un plazo de 24 a 48 horas.
             </p>
           </motion.div>
         </div>
@@ -103,7 +106,6 @@ export function Booking() {
   return (
     <section id="booking" className="py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,15 +113,21 @@ export function Booking() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">Get Inked</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6">Book a Consultation</h2>
+          <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-4">
+            Agenda tu cita
+          </p>
+
+          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
+            Reserva una consulta
+          </h2>
+
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Ready to bring your vision to life? Fill out the form below and I&apos;ll get back to you 
-            to discuss your project and schedule your session.
+            ¿Listo para convertir tu idea en realidad? Completa el formulario y me pondré en contacto contigo
+            para hablar sobre tu proyecto y agendar tu sesión.
           </p>
         </motion.div>
 
-        {/* Form */}
+        {/* Formulario */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,12 +136,13 @@ export function Booking() {
           onSubmit={handleSubmit}
           className="space-y-8"
         >
-          {/* Personal Info */}
+          {/* Información personal */}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-sm text-foreground mb-2">
-                Full Name *
+                Nombre completo *
               </label>
+
               <input
                 type="text"
                 id="name"
@@ -142,13 +151,15 @@ export function Booking() {
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full bg-input border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors"
-                placeholder="Your name"
+                placeholder="Tu nombre"
               />
             </div>
+
             <div>
               <label htmlFor="email" className="block text-sm text-foreground mb-2">
-                Email *
+                Correo electrónico *
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -157,15 +168,16 @@ export function Booking() {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full bg-input border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors"
-                placeholder="your@email.com"
+                placeholder="correo@ejemplo.com"
               />
             </div>
           </div>
 
           <div>
             <label htmlFor="phone" className="block text-sm text-foreground mb-2">
-              Phone Number
+              Número de teléfono
             </label>
+
             <input
               type="tel"
               id="phone"
@@ -173,16 +185,16 @@ export function Booking() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full bg-input border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors"
-              placeholder="+1 (555) 000-0000"
+              placeholder="+52 999 000 0000"
             />
           </div>
 
-          {/* Tattoo Details */}
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <label htmlFor="tattooType" className="block text-sm text-foreground mb-2">
-                Tattoo Style *
+                Estilo de tatuaje *
               </label>
+
               <select
                 id="tattooType"
                 name="tattooType"
@@ -191,16 +203,19 @@ export function Booking() {
                 onChange={handleChange}
                 className="w-full bg-input border border-border px-4 py-3 text-foreground focus:border-accent focus:outline-none transition-colors appearance-none cursor-pointer"
               >
-                <option value="">Select style</option>
+                <option value="">Selecciona un estilo</option>
+
                 {tattooTypes.map(type => (
                   <option key={type} value={type}>{type}</option>
                 ))}
               </select>
             </div>
+
             <div>
               <label htmlFor="size" className="block text-sm text-foreground mb-2">
-                Approximate Size *
+                Tamaño aproximado *
               </label>
+
               <select
                 id="size"
                 name="size"
@@ -209,16 +224,19 @@ export function Booking() {
                 onChange={handleChange}
                 className="w-full bg-input border border-border px-4 py-3 text-foreground focus:border-accent focus:outline-none transition-colors appearance-none cursor-pointer"
               >
-                <option value="">Select size</option>
+                <option value="">Selecciona un tamaño</option>
+
                 {sizes.map(size => (
                   <option key={size} value={size}>{size}</option>
                 ))}
               </select>
             </div>
+
             <div>
               <label htmlFor="bodyPart" className="block text-sm text-foreground mb-2">
-                Body Placement *
+                Parte del cuerpo *
               </label>
+
               <select
                 id="bodyPart"
                 name="bodyPart"
@@ -227,7 +245,8 @@ export function Booking() {
                 onChange={handleChange}
                 className="w-full bg-input border border-border px-4 py-3 text-foreground focus:border-accent focus:outline-none transition-colors appearance-none cursor-pointer"
               >
-                <option value="">Select area</option>
+                <option value="">Selecciona una zona</option>
+
                 {bodyParts.map(part => (
                   <option key={part} value={part}>{part}</option>
                 ))}
@@ -235,11 +254,11 @@ export function Booking() {
             </div>
           </div>
 
-          {/* Description */}
           <div>
             <label htmlFor="description" className="block text-sm text-foreground mb-2">
-              Describe Your Vision *
+              Describe tu idea *
             </label>
+
             <textarea
               id="description"
               name="description"
@@ -248,39 +267,10 @@ export function Booking() {
               value={formData.description}
               onChange={handleChange}
               className="w-full bg-input border border-border px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors resize-none"
-              placeholder="Tell me about your tattoo idea, any specific elements, meaning behind it, etc."
+              placeholder="Cuéntame sobre tu idea de tatuaje, elementos específicos, significado, referencias, etc."
             />
           </div>
 
-          {/* File Upload */}
-          <div>
-            <label className="block text-sm text-foreground mb-2">
-              Reference Images (Optional)
-            </label>
-            <div
-              onClick={() => fileInputRef.current?.click()}
-              className="border border-dashed border-border hover:border-accent/50 p-8 text-center cursor-pointer transition-colors"
-            >
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                multiple
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              <svg className="w-8 h-8 mx-auto mb-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <p className="text-muted-foreground text-sm">
-                {files.length > 0 
-                  ? `${files.length} file(s) selected`
-                  : "Click to upload reference images (max 5)"}
-              </p>
-            </div>
-          </div>
-
-          {/* Submit Button */}
           <motion.button
             type="submit"
             disabled={isSubmitting}
@@ -294,10 +284,11 @@ export function Booking() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
-                Sending Request...
+
+                Enviando solicitud...
               </span>
             ) : (
-              "Submit Booking Request"
+              "Enviar solicitud de cita"
             )}
           </motion.button>
         </motion.form>
